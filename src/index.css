@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TerraLens Design System - Modern Tech Platform with Geo Accents */
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 173 80% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 173 58% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 173 80% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom TerraLens tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(173 80% 40%), hsl(187 85% 43%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 20% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 11%), hsl(220 30% 18%));
+    --shadow-glow: 0 0 40px -10px hsl(173 80% 40% / 0.4);
+    --shadow-card: 0 4px 24px -4px hsl(220 30% 10% / 0.08);
+    --shadow-elevated: 0 8px 32px -8px hsl(220 30% 10% / 0.12);
+    
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 220 25% 11%;
+    --sidebar-foreground: 220 14% 80%;
+    --sidebar-primary: 173 80% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 16%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 173 80% 40%;
+  }
+
+  .dark {
+    --background: 220 25% 6%;
+    --foreground: 220 14% 96%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 173 80% 45%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 14% 96%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 14% 60%;
+
+    --accent: 173 58% 45%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 173 80% 45%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(173 80% 45%), hsl(187 85% 48%));
+    --gradient-card: linear-gradient(135deg, hsl(220 25% 10%), hsl(220 25% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 4%), hsl(220 30% 8%));
+    --shadow-glow: 0 0 60px -15px hsl(173 80% 45% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 8px 32px -8px hsl(0 0% 0% / 0.5);
+
+    --success: 142 70% 45%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 220 14% 80%;
+    --sidebar-primary: 173 80% 45%;
+    --sidebar-primary-foreground: 220 25% 6%;
+    --sidebar-accent: 220 25% 12%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 220 20% 14%;
+    --sidebar-ring: 173 80% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+
+  .elevated-shadow {
+    box-shadow: var(--shadow-elevated);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+}

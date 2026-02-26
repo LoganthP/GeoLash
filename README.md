@@ -76,15 +76,39 @@ GeoLash provides:
 
 ## 🏗 System Architecture
 
-```
-User Interface (React + Tailwind)
-        │
-        ▼
-Frontend Logic (Components & Hooks)
-        │
-        ▼
-Supabase Services
-(Auth • Database • Storage)
+```mermaid
+flowchart TD
+    A[User Opens GeoLash Web App] --> B[React Frontend UI]
+    
+    B --> C[User Location Input / Map Interaction]
+    C --> D[Client-Side Validation & Formatting]
+    
+    D --> E[REST API Request]
+    
+    E --> F[Node.js / Express Backend]
+    F --> G[Request Sanitization Layer]
+    
+    G --> H[Geo Processing Engine]
+    
+    H --> I[Geolocation Resolver]
+    H --> J[Coordinate Processing Module]
+    H --> K[Distance & Mapping Logic]
+    
+    I --> L[External Geo APIs / Services]
+    J --> M[Geo Data Formatter]
+    K --> M
+    
+    M --> N[Structured Geo Response]
+    
+    N --> O[Database Layer (MongoDB / JSON / Prisma)]
+    O --> P[(Geo Metadata Storage)]
+    
+    N --> Q[JSON Response to Frontend]
+    
+    Q --> R[Map Visualization Layer]
+    R --> S[Live Location Markers]
+    R --> T[Geo Analytics Panels]
+    R --> U[Interactive Map Rendering]
 ```
 
 ---

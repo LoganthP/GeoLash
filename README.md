@@ -80,28 +80,28 @@ GeoLash provides:
 flowchart TD
     A[User Opens GeoLash Web App] --> B[React Frontend UI]
     
-    B --> C[User Location Input / Map Interaction]
-    C --> D[Client-Side Validation & Formatting]
+    B --> C[User Location Input and Map Interaction]
+    C --> D[Client Side Validation and Formatting]
     
     D --> E[REST API Request]
     
-    E --> F[Node.js / Express Backend]
+    E --> F[Node JS Express Backend]
     F --> G[Request Sanitization Layer]
     
     G --> H[Geo Processing Engine]
     
     H --> I[Geolocation Resolver]
     H --> J[Coordinate Processing Module]
-    H --> K[Distance & Mapping Logic]
+    H --> K[Distance and Mapping Logic]
     
-    I --> L[External Geo APIs / Services]
+    I --> L[External Geo API Services]
     J --> M[Geo Data Formatter]
     K --> M
     
     M --> N[Structured Geo Response]
     
-    N --> O[Database Layer (MongoDB / JSON / Prisma)]
-    O --> P[(Geo Metadata Storage)]
+    N --> O[Database Layer]
+    O --> P[Geo Metadata Storage]
     
     N --> Q[JSON Response to Frontend]
     
